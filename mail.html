@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Bill Notification</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #ebe8e8, #6f0f1a);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container Styling */
+        .container {
+            background: rgba(230, 224, 224, 0.8);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(234, 230, 230, 0.5);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #6f0f1a;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #6f0f1a;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #781e30;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border: 2px solid #f1efe7;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background: #6f0f1a;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #e7dddf;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .form-group button:hover {
+            background: #781e30;
+            transform: scale(1.05);
+        }
+
+        /* Message Box Styling */
+        #message-box {
+            display: none;
+            position: absolute;
+            top: 100%; /* Place below the button */
+            left: 50%; /* Center align with the button */
+            transform: translateX(-50%);
+            margin-top: 10px; /* Small gap between button and message */
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            .container h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Send Mess Bill Notifications</h2>
+        <form id="notify-form">
+            <div class="form-group">
+                <label for="month">Month (1-12):</label>
+                <input type="number" id="month" name="month" min="1" max="12" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" min="2000" required>
+            </div>
+            <div class="form-group" style="position: relative;">
+                <button type="button" onclick="sendNotification()">Notify</button>
+                <!-- Popup Message Box -->
+                <div id="message-box">Notifications sent successfully.</div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        async function sendNotification() {
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+
+            try {
+                const response = await fetch('mail.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ month, year }),
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    showMessage();
+                } else {
+                    alert('Failed to send notifications');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function showMessage() {
+            const messageBox = document.getElementById('message-box');
+            messageBox.style.display = 'block';
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #8A1538;
+    margin:0;
+    padding:0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('image.png') no-repeat center center/cover;
+    background-size: cover;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8A1538;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+header h1 {
+    color: white;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Login Section */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;  /* Keeps items in one row */
+    padding: 50px 0;
+    height: 100vh;
+    width: 100%;
+    gap: 20px; /* Adds spacing between login box and chef image */
+}
+
+.login-box {
+    background-color: #8A1538;
+    padding: 30px;
+    border-radius: 30px;
+    width: 30%;
+    max-width: 400px;
+    color: white;
+    text-align: center;
+    flex-shrink: 0;  /* Prevents shrinking */
+}
+
+
+.login-box h2 {
+    text-align: center;
+}
+
+.login-box label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.forgot-password-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.btn {
+    font-size: 1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    width: 40%;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: rgb(32, 150, 32);
+}
+
+.login-box button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Chef Image */
+.chef-image {
+    width: auto;
+    height: 400px;
+    flex-shrink: 0;  /* Prevents shrinking */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .login-box {
+        width: 40%;
+    }
+    
+    .chef-image {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-wrap: nowrap; /* Ensure side-by-side layout */
+        justify-content: center;
+    }
+
+    .login-box {
+        width: 45%;
+    }
+
+    .chef-image {
+        width: 180px;
+    }
+    .container {
+        background-size: 100% 100%; /* Ensures full coverage */
+        min-height: 100vh;
+        background-position: center center; /* Keeps it centered */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        flex-direction: row; /* Keep login box and chef image in one line */
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    .login-box {
+        width: 50%;
+        padding: 20px;
+    }
+
+    .chef-image {
+        width: 120px;  /* Reduce size for small screens */
+    }
+}

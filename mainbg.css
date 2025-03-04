@@ -1,0 +1,75 @@
+/* Reset and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full height */
+    width: 100%;
+    background: url('image.png') no-repeat center center fixed;
+    background-size: 100% 100%; /* Ensures full coverage */
+}
+
+/* Container */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Heading */
+h1 {
+    color: white;
+    font-size: 28px; /* Fixed size to prevent wrapping */
+    background-color: #781e30;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 400px;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    margin: 15px auto;
+    padding: 15px 40px;
+    background-color: #781e30;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #5c1725;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    body {
+        background-size: 100% 100%; /* Ensures no empty space */
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 24px; /* Adjusts for mobile */
+        padding: 10px;
+        white-space: nowrap; /* Ensures text stays in one line */
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}

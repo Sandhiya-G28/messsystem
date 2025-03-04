@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPGIT Mess Dashboard</title>
+    <link rel="stylesheet" href="st_home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery for AJAX -->
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <h1>TPGIT Mess</h1>
+        </div>
+        <div class="navbar-right">
+            <form id="logout-form" action="logout.php" method="post">
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <a href="attendance_boys.php"><button class="menu-btn">Mark Attendance</button></a>
+            <a href="view_attendance_boys.html"><button class="menu-btn">View Attendance</button></a>
+            <a href="student_management_boys.php"><button class="menu-btn">Student Management</button></a>
+            <a href="inventory_boys.html"><button class="menu-btn">Inventory management</button></a>
+            <a href="grocery_boys.php"><button class="menu-btn">Generate Bill</button></a>
+            <a href="verify_boys.php"><button class="menu-btn">Verify Payments</button></a>
+            <a href="viewbillst_boys.php"><button class="menu-btn">View Bills</button></a>
+            
+            
+            <!-- Notify button that triggers AJAX -->
+            <a href="mail_boys.html"><button class="menu-btn" id="notify-btn">Notify</button></a>
+        </div>
+    </div>
+
+    
+</body>
+</html>

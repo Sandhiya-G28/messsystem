@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('image.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2 {
+            color: #800000;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+            text-align: left;
+            color: #333;
+        }
+
+        input[type="text"], input[type="file"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #a52a2a;
+        }
+
+        /* Floating message style below the submit button */
+        .message {
+            display: none;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        /* Error message style */
+        .message.error {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Payment Receipt</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="reg_no">Registration Number</label>
+            <input type="text" id="reg_no" name="reg_no" placeholder="Enter Registration Number" required>
+
+            <label for="transaction_ref">Transaction Reference No.</label>
+            <input type="text" id="transaction_ref" name="transaction_ref" placeholder="Enter Transaction Reference" required>
+
+            <label for="payment_date">Payment Date</label>
+            <input type="date" id="payment_date" name="payment_date" required>
+
+            <label for="receipt">Upload Payment Receipt (PDF or Image)</label>
+            <input type="file" id="receipt" name="receipt" accept=".pdf,.jpg,.jpeg,.png" required>
+
+            <button type="submit">Submit</button>
+
+            <!-- Floating message below the submit button -->
+            <div id="message" class="message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var formData = new FormData(this); // Create a FormData object with form inputs
+
+            // Send an AJAX request
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'upload_receipt_boys.php', true);
+
+            xhr.onload = function() {
+                var messageBox = document.getElementById('message');
+                if (xhr.status === 200) {
+                    if (xhr.responseText.includes("success")) {
+                        messageBox.textContent = "Upload successful!";
+                        messageBox.classList.remove('error');
+                        showMessage();
+                    } else {
+                        messageBox.textContent = "Error uploading receipt. Please try again.";
+                        messageBox.classList.add('error');
+                        showMessage();
+                    }
+                } else {
+                    messageBox.textContent = "Error uploading receipt. Please try again.";
+                    messageBox.classList.add('error');
+                    showMessage();
+                }
+            };
+
+            xhr.send(formData); // Send the form data via AJAX
+        });
+
+        // Function to show the floating message for 5 seconds
+        function showMessage() {
+            var messageBox = document.getElementById('message');
+            messageBox.style.display = 'block';
+            setTimeout(function() {
+                messageBox.style.display = 'none';
+            }, 5000);  // Hide after 5 seconds
+        }
+    </script>
+</body>
+</html>

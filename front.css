@@ -1,0 +1,229 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('boyshostel.jpeg') no-repeat center center fixed; /* Replace with actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #781e30;
+    padding: 10px 20px;
+    color: white;
+    flex-wrap: wrap; /* Allow wrapping in smaller screens */
+}
+
+
+.navbar .menu-icon {
+    background-color: #781e30;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px; /* Reduced padding for smaller screens */
+    font-size: 14px; /* Reduced font size for better fit */
+    border-radius: 5px;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #5e1623;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: #781e30;
+    padding: 10px;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 150px;
+}
+
+.dropdown a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #5e1623;
+}
+
+.dropdown a:hover {
+    background-color: #5e1623;
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* Content Styles */
+.content {
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+
+.content h1 {
+    background-color: #781e30;
+    padding: 15px;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.message-box {
+    margin-top: 30px;
+    background-color: #781e30;
+    padding: 20px;
+    border-radius: 25px;
+    width: 400px;
+    margin: 30px auto;
+}
+
+.message-box p {
+    font-size: 18px;
+}
+
+/* Button Styles */
+.menu-buttons {
+    margin-top: 30px;
+}
+
+.menu-btn {
+    background-color: #781e30;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 15px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #5e1623;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar .nav-links {
+        flex-direction: row; /* Keep navbar items in a row */
+        gap: 10px;
+        margin-top: 10px;
+        width: 100%; /* Ensure navbar stretches across the screen */
+        justify-content: center; /* Center items */
+    }
+
+    .navbar .nav-links a {
+        font-size: 12px; /* Smaller font size for better fit */
+        padding: 8px 10px; /* Reduced padding for mobile view */
+    }
+
+    .message-box {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .menu-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .content h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar .menu-icon {
+        font-size: 18px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .content h1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .message-box {
+        width: 95%;
+    }
+
+    .menu-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 11px; /* Even smaller font size for very small screens */
+        padding: 8px 10px;
+    }
+
+    .content h1 {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .message-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .menu-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPGIT Mess</title>
+    <link rel="stylesheet" href="front.css">  <!-- Link to front.css -->
+    <link rel="stylesheet" href="contact.css"> <!-- Link to contact.css -->
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!--<link rel="stylesheet" href="pay.css"> --><!-- Link to contact.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <style>
+        #home {
+            background-image: url('Boys-Hostel-BFI-u6qR.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full screen */
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+        /* Sticky Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure navbar stays on top */
+            background-color: #781e30;
+            height: 60px;
+        }
+
+        /* Ensure content doesn't go under the navbar */
+        body {
+            margin-top: -20px; /* Match this to navbar height */
+        }
+        .message-box {
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent box for readability */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .navbar .nav-links {
+    display: flex;
+    gap: 15px;
+    background-color: transparent;
+}
+
+        /* Center Content */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Full height minus navbar */
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px; /* So it appears below the navbar */
+            left: 20px;
+            background-color: #781e30;
+            padding: 10px;
+            border-radius: 5px;
+            flex-direction: column;
+            width: 150px;
+        }
+        #bills-section {
+    margin-top: 50px; /* Adjust as needed */
+    padding-top: 50px; /* Add some internal spacing */
+    
+    
+}
+
+    #payment{
+            
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center; /* Center elements vertically within the container */
+    align-items: center; /* Center elements horizontally within the container */
+    text-align: center;
+    padding: 20px;
+    
+    border-radius: 10px;
+    
+
+.button {
+    background-color: #800000; /* Dark Red color */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.button:hover {
+    background-color: #a52a2a; /* Lighter red for hover */
+}
+
+        }
+
+        /* Contact Us Section */
+        #contactSection {
+            display: none; /* Initially hidden */
+            padding: 40px;
+            background-color: #f5f5f5;
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .show {
+            display: block; /* Show the section */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <h2>TPGIT MESS</h2>
+            
+            <nav class="nav-links">
+                
+                <a href="#home">Home</a>
+                <a href="#about" onclick="showabout()">About</a> <!-- Updated Link -->
+                <a href="view_bill_boys.php" onclick="return showbillSection(event);">Bills</a>
+
+                <a href="#payment" onclick="showpaySection()">Payment</a>
+                <a href="#contact-section" onclick="showContactSection()">Contact us</a> <!-- Updated Link -->
+                <a href="logout.php">Log out</a>
+            </nav>
+            
+        </div>
+        
+
+</header>
+
+    <!-- Main Content -->
+     <section id="home">
+    <div class="content">
+        <h1>Welcome to TPGIT Mess!</h1>
+        <div class="message-box">
+            <p>Track your meals and view your bills in just a few clicks.</p>
+        </div>
+        
+        <!-- Adding Mess Menu and Attendance Buttons -->
+        <div class="menu-buttons">
+            <a href="menuboys.html" class="menu-btn">Mess Menu</a>
+            <a href="view_attendance_boys.html" class="menu-btn">Attendance</a>
+        </div>
+    </div>
+    </section>
+    <section id="about">
+        <div class="container">
+         <header>
+             About Us
+         </header>
+         <h1>Boys Hostel</h1>
+         <section>
+             <div class="image-container">
+               <img src="boyshostel.jpeg" alt="Hostel Image">
+             </div>
+           </section>
+           <div class="info">
+             <p><b>Accommodation:</b>Total No. of Boys Hostel – 3 :- Total No. of Rooms – 181,</p>
+             <p><b>Total strength :</b> 560 (at present)</p>
+             <p><b>Mess Facilities:</b>Dividing System Mess charges – Rs. 70/- per day (approx.)</p>
+         
+             <p><b>Water Facilities:</b>Sufficient water facility is provided from a separate well. Each hostel is having separate R.O Drinking System</p>
+           </div>
+        </div>
+     
+           </section>
+        
+ 
+       </div>
+     </section>
+     <section id="bills-section">
+        
+     </section>
+
+     <section id="payment">
+        <div class="container">
+            <button class="button" id="payButton" onclick="window.location.href='https://www.onlinesbi.sbi/sbicollect/icollecthome.htm'">Pay</button>
+            <button class="button" id="updateButton" onclick="window.location.href='pay_update_boys.html'">Upload Reciept</button>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <div id="contact-section">
+        <div class="contact-container">
+            <!-- Contact Us Header -->
+            <div class="contact-header">
+                <h2>Contact Us</h2>
+                <p class="contact-description">Feel free to reach out to us anytime. We're happy to help!</p>
+            </div>
+    
+            <!-- Split into two columns: Contact Details and Location -->
+            <div class="contact-columns">
+                <!-- Contact Details Column -->
+                
+                <div class="contact-details">
+                    <h2 class="contact-info-heading">Contact Information</h2>
+                    <div class="contact-column">
+                        <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                        <p>TPGIT Campus,Chitteri Road, Bagayam</p>
+                        <p>Vellore District- 632002,Tamil Nadu.</p>
+                    </div>
+                    <div class="contact-column">
+                        <h3><i class="fas fa-phone-alt"></i> Phone</h3>
+                        <p>0416-2266101</p>
+                        <p>0416-2264991</p>
+                    </div>
+                    <div class="contact-column">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>complainthostel@gmail.com</p>
+                        <p>tpgithostels@gmail.com</p>
+                    </div>
+                </div>
+    
+                <!-- Location (Google Map) Column -->
+                <div class="map-container">
+                    <h3>Our Location</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4283705005196!2d79.11790747483968!3d12.88015368742687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad394400000001%3A0xf7139af5b9890941!2sThanthai%20Periyar%20Government%20Institute%20of%20Technology-Vellore!5e0!3m2!1sen!2sin!4v1733228713835!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+// Show the Contact Section when "Contact Us" is clicked
+        function showContactSection() {
+            document.getElementById("contact-section").classList.add("show");
+            document.getElementById("contact-section").scrollIntoView({ behavior: "smooth" });
+        }
+        
+        function showbillSection(event) {
+    event.preventDefault(); // Stop the default navigation
+
+    fetch("view_bill_boys.php") // Fetch the PHP page content
+        .then(response => response.text()) // Convert response to text
+        .then(data => {
+            let billSection = document.getElementById("bills-section");
+            billSection.innerHTML = data; // Load content inside the section
+            
+            // Scroll smoothly to the bills section
+            billSection.scrollIntoView({ behavior: "smooth" });
+        })
+        .catch(error => console.error("Error loading bills:", error));
+
+    return false; // Ensure the link does not redirect
+}
+
+        function showaboutSection() {
+            document.getElementById("about").classList.add("show");
+            document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+        }
+        function showpaySection() {
+            document.getElementById("payment").classList.add("show");
+            document.getElementById("payment").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+    
+        
+</body>
+</html>

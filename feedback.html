@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #781e30;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: black;
+            text-align: center;
+        }
+
+        .feedback-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: green;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .feedback-container input[type="text"],
+        .feedback-container input[type="number"],
+        .feedback-container textarea {
+            width: 96%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #b9b8b8;
+            border-radius: 5px;
+        }
+
+        .feedback-container button {
+            background-color: #781e30;
+            color: rgb(216, 213, 213);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+
+        .feedback-container button:hover {
+            background-color: #a02334;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>FEEDBACK FORM</h2>
+
+    <div class="feedback-container">
+        <form action="submit_feedback.php" method="post">
+            <label for="student_name">Student Name:</label>
+            <input type="text" id="student_name" name="student_name" required>
+
+            <label for="register_number">Register Number:</label> <!-- Changed from Student ID to Register Number -->
+            <input type="text" id="register_number" name="register_number" required> <!-- Updated name attribute -->
+
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" required></textarea>
+
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+</body>
+</html>

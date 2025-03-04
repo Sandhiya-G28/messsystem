@@ -1,0 +1,134 @@
+/* Apply a background image to the page */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('image.png'); /* Ensure the image path is correct */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header section */
+.header {
+    background-color: #8B1E3F; /* Dark red color */
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    color: white;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 20px;
+    width: 80%; /* You can change this to 100% for full-width */
+    max-width: 1200px; /* Optional: limit the max width */
+    margin: 30px auto;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+form input[type="text"], 
+form input[type="email"], 
+form input[type="date"], 
+form input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #8B1E3F; /* Dark red for buttons */
+    color: white;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #6A102D; /* Darker shade of red */
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #8B1E3F;
+    color: white;
+}
+
+td {
+    background-color: #FFF8F9; /* Light background for table cells */
+}
+
+td a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 5px 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+td a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Home icon styling */
+.home-icon {
+    position: fixed;  /* Change to 'fixed' to ensure it stays in place even when scrolling */
+    top: 10px;        /* Distance from the top edge of the viewport */
+    left: 10px;       /* Distance from the left edge of the viewport */
+    font-size: 30px;  /* Adjust font size */
+    color: white;     /* Set color to white */
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    z-index: 9999;    /* Ensure it's on top of other elements */
+}
+
+.home-icon i {
+    font-size: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Use more width on smaller screens */
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    form {
+        flex-direction: column; /* Stack form inputs vertically */
+        align-items: center;
+    }
+
+    form input[type="text"], 
+    form input[type="email"], 
+    form input[type="date"], 
+    form input[type="submit"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

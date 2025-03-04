@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPGIT Mess</title>
+    <link rel="stylesheet" href="front.css">  <!-- Link to front.css -->
+    <link rel="stylesheet" href="contact.css"> <!-- Link to contact.css -->
+    <link rel="stylesheet" href="about.css">
+    <!--<link rel="stylesheet" href="pay.css"> --><!-- Link to contact.css -->
+    <style>
+        /* Sticky Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure navbar stays on top */
+            background-color: #781e30;
+            height: 60px;
+        }
+
+        /* Ensure content doesn't go under the navbar */
+        body {
+            margin-top: 60px; /* Match this to navbar height */
+        }
+
+        /* Center Content */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Full height minus navbar */
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px; /* So it appears below the navbar */
+            left: 20px;
+            background-color: #781e30;
+            padding: 10px;
+            border-radius: 5px;
+            flex-direction: column;
+            width: 150px;
+        }
+    #payment{
+            
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f5f5f5; /* Optional background color */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center; /* Center elements vertically within the container */
+    align-items: center; /* Center elements horizontally within the container */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Optional background color for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visual */
+}
+
+.button {
+    background-color: #800000; /* Dark Red color */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.button:hover {
+    background-color: #a52a2a; /* Lighter red for hover */
+}
+
+        }
+
+        /* Contact Us Section */
+        #contactSection {
+            display: none; /* Initially hidden */
+            padding: 40px;
+            background-color: #f5f5f5;
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .show {
+            display: block; /* Show the section */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <button class="menu-icon" onclick="toggleMenu()">&#9776; Tpgit mess</button>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about" onclick="showabout()">About</a> <!-- Updated Link -->
+                <a href="view_bill.php">Bills</a>
+                <a href="#payment" onclick="showpaySection()">Payment</a>
+                <a href="#contact-section" onclick="showContactSection()">Contact us</a> <!-- Updated Link -->
+            </nav>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div id="dropdownMenu" class="dropdown">
+            <a href="#">Profile</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+     <section id="home">
+    <div class="content">
+        <h1>Welcome to TPGIT Mess!</h1>
+        <div class="message-box">
+            <p>Track your meals and view your bills in just a few clicks.</p>
+        </div>
+        
+        <!-- Adding Mess Menu and Attendance Buttons -->
+        <div class="menu-buttons">
+            <a href="mess_menu.html" class="menu-btn">Mess Menu</a>
+            <a href="view_attendance.html" class="menu-btn">Attendance</a>
+        </div>
+    </div>
+    </section>
+    <section id="about">
+        <div class="container">
+         <header>
+             About Us
+         </header>
+         <h1>Boys Hostel</h1>
+         <section>
+             <div class="image-container">
+               <img src="boyshostel.jpeg" alt="Hostel Image">
+             </div>
+           </section>
+           <div class="info">
+             <p><b>Accommodation:</b>Total No. of Boys Hostel – 3 :- Total No. of Rooms – 181,</p>
+             <p><b>Total strength :</b> 560 (at present)</p>
+             <p><b>Mess Facilities:</b>Dividing System Mess charges – Rs. 70/- per day (approx.)</p>
+         
+             <p><b>Water Facilities:</b>Sufficient water facility is provided from a separate well. Each hostel is having separate R.O Drinking System</p>
+           </div>
+        </div>
+       <div class="con">
+         <h1>Girls Hostel</h1>
+         <section>
+             <div class="imagee-container">
+               <img src="Girls-Hostel-New1.jpg" alt="Hostel Image">
+             </div>
+           </section>
+           <div class="infoo">
+             <p><b>Accommodation: </b>Total No. of Girls Hostel – 2 :- Total No. of Rooms – 98</p>
+                 
+             <p> <b>Total strength :</b> 361 (at present)</p>  
+                 
+             <p><b> Mess Facilities:</b>Dividing System Mess charges – Rs. 70/- per day (approx.)</p> 
+             <p><b>Water Facilities:</b>Sufficient water facility is provided from a separate well. Each hostel is having separate R.O Drinking System</p>
+                 
+           </div>
+ 
+       </div>
+     </section>
+     <section id="payment">
+        <div class="container">
+            <button class="button" id="payButton" onclick="window.location.href='https://www.onlinesbi.sbi/sbicollect/icollecthome.htm'">Pay</button>
+            <button class="button" id="updateButton" onclick="window.location.href='pay_update.html'">Update Status</button>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Contact Us</h2>
+                <p>Feel free to reach out to us anytime. We're happy to help!</p>
+            </div>
+            <div class="contact-details">
+                <div class="contact-column">
+                    <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                    <p>TPGIT Campus,Chitteri Road, Bagayam ,Vellore District- 632002,Tamil Nadu.</p>
+                </div>
+                <div class="contact-column">
+                    <h3><i class="fas fa-phone-alt"></i> Phone</h3>
+                    <p>0416-2266101</p>
+                    <p>0416-2264991</p>
+                </div>
+                <div class="contact-column">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>complainthostel@gmail.com</p>
+                    <p>tpgithostels@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        // Show the Contact Section when "Contact Us" is clicked
+        function showContactSection() {
+            document.getElementById("contact-section").classList.add("show");
+            document.getElementById("contact-section").scrollIntoView({ behavior: "smooth" });
+        }
+        function showaboutSection() {
+            document.getElementById("about").classList.add("show");
+            document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+        }
+        function showpaySection() {
+            document.getElementById("payment").classList.add("show");
+            document.getElementById("payment").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>

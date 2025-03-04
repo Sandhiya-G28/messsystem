@@ -1,0 +1,103 @@
+/* Style for the overall page */
+body {
+    background-image: url('image.png'); /* Add your background image path */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Style for the menu container */
+.menu-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 40px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Style for the menu header */
+.menu-header h1 {
+    background-color: #781e30;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Style for the table */
+.mess-menu-table {
+    width: 80%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Style for table headers */
+.mess-menu-table th {
+    background-color: #781e30;
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Style for table data cells */
+.mess-menu-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Zebra striping for the table rows */
+.mess-menu-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.mess-menu-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Hover effect for table rows */
+.mess-menu-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Style for first column (days of the week) */
+.mess-menu-table td:first-child {
+    font-weight: bold;
+    color: #781e30;
+}
+
+/* Responsive styling for mobile screens */
+@media (max-width: 600px) {
+    .menu-container {
+        padding: 10px;
+    }
+    
+    .mess-menu-table th, .mess-menu-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .menu-header h1 {
+        font-size: 24px;
+    }
+}

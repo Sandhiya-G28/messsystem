@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="staff_register.css">
+    <title>Staff Registration Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-box">
+            <h2>Staff Registration</h2>
+            <form id="form-box" method="post" action="staff_register.php">
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="phone">Ph No:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <label>Gender:</label> 
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male" class="inline-label">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female" class="inline-label">Female</label><br>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="accept" name="accept" required>
+                    <label for="accept">I accept</label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="window.location.href='login.html'">Back to Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

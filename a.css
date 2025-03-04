@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.container {
+    
+        position: relative;
+        width: 105%;
+       
+        background-image: url('image.png'); /* Background image of vegetables */
+        background-size: cover;
+        background-position: center;
+    
+}
+
+header {
+    text-align: center;
+    background-color: #781e30;
+    padding: 10px 20px;
+    color: white;
+}
+h1{
+    text-align: center;
+    color: white;
+    padding: 10px;
+   
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+.image-container img {
+    width: 500px; /* Adjust the size as necessary */
+    height: auto;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+  .info {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  .con {
+    
+    position: relative;
+    width: 105%;
+   
+    background-image: url('image.png'); /* Background image of vegetables */
+    background-size: cover;
+    background-position: center;
+
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+.imagee-container img {
+    width: 500px; /* Adjust the size as necessary */
+    height: auto;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .infoo{
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
